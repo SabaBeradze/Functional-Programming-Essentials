@@ -45,14 +45,14 @@ let  eliminate l=
   in foo l
 
 let isempty l =l=[]
-(* კარგი კოდია მე მომწონს <3 დდ ბევრი კი მაწვალა *)
+
 let  pack l=
 let rec foo l acc = match l with 
 x::xs->if isempty acc then foo xs (x::acc) else (
 if x=(List.hd acc) then foo xs (x::acc) else (acc)::(foo (x::xs) []))
 |x->acc::[]
 in (foo l [])
-(* ძალიან მატტივად ბატონო ზემოთას გამოტენებით *)
+
 let encode l =
   let temp= pack l
   in 
@@ -127,10 +127,8 @@ let insert el ind l =
 
   let rec range l r =
     if l<=r then l::range(l+1) r else []
-(* randomebi gamovtoveet *)
 
 (* this excersise is quite cool *)
-(* in list i skip last 2  *)
 
 (* aritmetic section *)
 let  is_prime n =
@@ -166,7 +164,6 @@ let number_prime_factors l =
         match lst with x::xs->(x,count x l)::foo xs l 
         |[]->[]
         in foo (eliminatedublicate l []) l
-(* prosta gashlilad davweret moklec sheileboda  gadavqvebodit tviton listshi*)
 let all_primes a =
   let rec foo a b =
     if is_prime b && a>b then b::(foo a (b+1)) else if a=b then if is_prime b then[b]else [] else
